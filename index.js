@@ -34,7 +34,7 @@ app.use(express.json());
 
 
 app.get("/", (req, res) => {
-
+  console.log("welcome to the stock market app");
   res.send("welcome to the stock market app");
 
 })
