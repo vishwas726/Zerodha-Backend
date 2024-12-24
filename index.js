@@ -33,7 +33,11 @@ app.use(cookieParser());
 app.use(express.json());
 
 
+app.get("/", (req, res) => {
 
+  res.send("welcome to the stock market app");
+
+})
 app.get("/holdings",auth,  async (req, res) => {
   try {
     let holdings = await HoldingsModel.find({});
