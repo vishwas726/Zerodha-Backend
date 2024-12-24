@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
   res.send("welcome to the stock market app");
 
 })
-app.get("/holdings",auth,  async (req, res) => {
+app.get("/holdings",  async (req, res) => {
   try {
     let holdings = await HoldingsModel.find({});
     res.json(holdings);
@@ -53,7 +53,7 @@ app.get("/holdings",auth,  async (req, res) => {
 });
 
 
-app.get("/positions" ,auth, async(req, res)=>{
+app.get("/positions" , async(req, res)=>{
 
 
   let positions=await PositionsModel.find({})
@@ -61,7 +61,7 @@ app.get("/positions" ,auth, async(req, res)=>{
 
 })
 
-app.post("/newOrder",auth, async (req, res) => {
+app.post("/newOrder", async (req, res) => {
   try {
     const order= new OrdersModel({
 
